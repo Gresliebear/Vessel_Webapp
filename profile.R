@@ -121,7 +121,7 @@ observeEvent(input$register_btn, {
   }
   if(alertText=="") {                                             # if no one is logged in, the app.R cookie-checker
     session$userData$user$username <- username                   #    created a blank session$userData$user for us
-    session$userData$user$hashed_pw <- hashpw(input$password1)
+    session$userData$user$hashed_pw <- input$password1 ## hashpw(input$password1)
     session$userData$user$reg_date <- now()
     session$userData$user$sp <- 1                                # new registrants have a superpower of 1
     session$userData$user$email <- input$email
